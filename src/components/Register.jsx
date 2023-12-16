@@ -38,7 +38,7 @@ export const Register = () => {
           }}
         >
           <Stack spacing={2}>
-            <Typography variant="h5">SIGN UP</Typography>
+            <Typography variant="h4">SIGN UP</Typography>
             <Stack direction="column" spacing={2}>
               <TextField
                 label="FIRST NAME"

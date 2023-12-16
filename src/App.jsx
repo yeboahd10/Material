@@ -21,7 +21,10 @@ function App() {
     setShow(!show);
   };
   return (
-    <Stack spacing={2}>
+    <Box sx={{
+      backgroundColor : 'white'
+    }}>
+    <Stack spacing={2}> 
       <Typography variant="h5">REGISTER </Typography>
       <Stack direction="column" spacing={2}>
         <TextField
@@ -95,6 +98,7 @@ function App() {
        <Typography variant="subtitle1">hello</Typography>
       </Box>
     </Stack>
+    </Box>
   );
 }
 

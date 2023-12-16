@@ -33,7 +33,8 @@ export const Register = () => {
       {login ? (
         <Box
           sx={{
-            backgroundColor: "white",
+            color : 'white'
+            
           }}
         >
           <Stack spacing={2}>
@@ -41,8 +42,8 @@ export const Register = () => {
             <Stack direction="column" spacing={2}>
               <TextField
                 label="FIRST NAME"
-                color="secondary"
-                helperText="enter your name"
+                color="primary"
+                
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
@@ -98,7 +99,7 @@ export const Register = () => {
               ></TextField>
 
               <Button variant="contained"> SIGN UP</Button>
-              <Button variant="outlined" color="success" onClick={handleLog}>
+              <Button variant="outlined" color="primary" onClick={handleLog}>
                 LOG IN
               </Button>
             </Stack>

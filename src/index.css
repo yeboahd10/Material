@@ -15,7 +15,10 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #fff;
+  color: white;
+  background-image:linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)), url(./components/back.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 h1 {

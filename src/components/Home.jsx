@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 
@@ -14,7 +15,7 @@ export default function ButtonAppBar() {
     
   return (
     <Box  sx={{ flexGrow: 1, }}  >
-      <AppBar position="sticky" sx={{display:'block', position:'relative', top:'0'}}>
+      <AppBar position="sticky" >
         <Toolbar>
           <IconButton
             size="large"
@@ -25,10 +26,10 @@ export default function ButtonAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1,fontWeight:'900' }}>
+            P-DAN TECH
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit"><LogoutIcon></LogoutIcon></Button>
         </Toolbar>
       </AppBar>
     </Box>

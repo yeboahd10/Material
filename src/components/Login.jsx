@@ -5,10 +5,33 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
 import LOGO from "../components/LOGO.png";
+import {  signInWithEmailAndPassword   } from 'firebase/auth';
+import { database } from "./Firebase";
+import { useNavigate } from 'react-router-dom'
+
 
 
 
 export const Login = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const onLogin = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(database, email, password)
+    .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        navigate("/Home")
+        console.log(user);
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage)
+    });
+   
+}
     const [show, setShow] = useState(false);
 
     const showPassword = () => {
@@ -24,6 +47,7 @@ export const Login = () => {
  <TextField
             label="EMAIL"
             type="email"
+            onChange={(e)=>setEmail(e.target.value)}
             InputLabelProps={{ style : {color: 'black'}}}
             InputProps={{
               startAdornment: (
@@ -35,6 +59,7 @@ export const Login = () => {
           ></TextField>
           <TextField
             label="PASSWORD"
+            onChange={(e)=>setPassword(e.target.value)}
             InputLabelProps={{ style : {color: 'black'}}}
             type={show ? "text" : "password"}
             InputProps={{
@@ -54,7 +79,7 @@ export const Login = () => {
               ),
             }}
           ></TextField>
-           <Button variant="contained"> SIGN IN</Button>
+           <Button variant="contained" onClick={onLogin}> SIGN IN</Button>
           </Stack>
   
     </Box>

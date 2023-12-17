@@ -80,7 +80,10 @@ export const Login = () => {
             }}
           ></TextField>
            <Button variant="contained" onClick={onLogin}> SIGN IN</Button>
+          <Typography variant='subtitle1' sx={{color:'black', fontStyle:'italic'}}>No Account Yet?</Typography>
+          <Button variant='outlined' onClick={() => navigate('/')}>Sign Up</Button>
           </Stack>
+          
   
     </Box>
   )

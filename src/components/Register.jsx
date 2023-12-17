@@ -35,8 +35,8 @@ export const Register = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
-        alert('Email already registered Login')
-        // ..
+        alert("Email already registered Login");
+        
       });
   };
   const navigate = useNavigate();
@@ -135,13 +135,13 @@ export const Register = () => {
                 ></TextField>
 
                 <Button variant="contained" type="submit" onClick={onSubmit}>
-                  
                   SIGN UP
                 </Button>
 
                 <Button variant="outlined" color="primary" onClick={handleLog}>
                   LOG IN
                 </Button>
+                
               </Stack>
             </form>
           </Stack>

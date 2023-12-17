@@ -13,11 +13,10 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-
+import LOGO from "../components/LOGO.png";
 
 export const Register = () => {
-    const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const [login, setLogin] = useState(true);
 
@@ -33,21 +32,26 @@ export const Register = () => {
       {login ? (
         <Box
           sx={{
-            color : 'white'
-            
+            color: "black",
           }}
         >
           <Stack spacing={2}>
-            <Typography variant="h4">SIGN UP</Typography>
+            <Stack alignItems='center' justifyContent='center' direction="row">
+              <img src={LOGO} width="120px" alt="" />
+            </Stack>
+
+            <Typography variant="h4" fontWeight="900">
+              SIGN UP
+            </Typography>
             <Stack direction="column" spacing={2}>
               <TextField
                 label="FIRST NAME"
                 color="primary"
-                
+                InputLabelProps={{ style : {color: 'black'}}}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
-                      <AccountCircleIcon />
+                      <AccountCircleIcon  sx={{color:'black'}}/>
                     </InputAdornment>
                   ),
                 }}
@@ -55,10 +59,11 @@ export const Register = () => {
               ></TextField>
               <TextField
                 label="LAST NAME"
+                InputLabelProps={{ style : {color: 'black'}}}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
-                      <AccountCircleIcon />
+                      <AccountCircleIcon  sx={{color:'black'}}/>
                     </InputAdornment>
                   ),
                 }}
@@ -66,21 +71,23 @@ export const Register = () => {
               <TextField
                 label="EMAIL"
                 type="email"
+                InputLabelProps={{ style : {color: 'black'}}}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
-                      <EmailIcon />
+                      <EmailIcon sx={{color:'black'}}/>
                     </InputAdornment>
                   ),
                 }}
               ></TextField>
               <TextField
                 label="PASSWORD"
+                InputLabelProps={{ style : {color: 'black'}}}
                 type={show ? "text" : "password"}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
-                      <KeyIcon />
+                      <KeyIcon sx={{color:'black'}} />
                     </InputAdornment>
                   ),
                   endAdornment: (
@@ -106,7 +113,7 @@ export const Register = () => {
           </Stack>
         </Box>
       ) : (
-       navigate('./Login')
+        navigate("./Login")
       )}
     </>
   );

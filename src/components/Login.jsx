@@ -38,7 +38,7 @@ export const Login = () => {
       setShow(!show);
     };
   return (
-    <Box>
+    <Box sx={{p:'2rem'}}>
       <Stack alignItems='center' justifyContent='center' direction="row">
               <img src={LOGO} width="120px" alt="" />
             </Stack>

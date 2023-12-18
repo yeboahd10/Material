@@ -14,8 +14,8 @@ import LogoutIcon from '@mui/icons-material/Logout';
 export default function ButtonAppBar() {
     
   return (
-    <Box  sx={{ flexGrow: 1, }}  >
-      <AppBar position="sticky" >
+    <Box  sx={{ flexGrow: 1,p:0 }}  >
+      <AppBar position="sticky"  >
         <Toolbar>
           <IconButton
             size="large"

@@ -56,6 +56,7 @@ export const Register = () => {
         <Box
           sx={{
             color: "black",
+            p:'2rem'
           }}
         >
           <Stack spacing={2}>

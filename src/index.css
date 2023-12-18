@@ -7,6 +7,9 @@ body {
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(./components/lg.png);
+  background-repeat: no-repeat;
+  background-position: center;
   
   
  

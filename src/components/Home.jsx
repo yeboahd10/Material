@@ -62,23 +62,24 @@ export default function ButtonAppBar() {
               height: "250px",
               borderRadius: "30px",
               color: "white",
+             
             }}
           >
             <Stack spacing={0.7}>
-              <Typography variant="h5" sx={{ textAlign: "left" }}>
+              <Typography variant="h5" sx={{ textAlign: "left" , fontWeight:'800'}}>
                 HI,
               </Typography>
-              <Typography variant="h5" sx={{ textAlign: "left" }}>
+              <Typography variant="h5" sx={{ textAlign: "left" , fontWeight:'800'}}>
                 Your Score
               </Typography>
               <Stack direction="row" spacing={16}>
-                <Typography variant="h1" sx={{ textAlign: "left" }}>
+                <Typography variant="h1" sx={{ textAlign: "left" , fontWeight:'800'}}>
                   0
                 </Typography>
 
                 <AddchartIcon sx={{fontSize:'5rem'}}></AddchartIcon>
               </Stack>
-              <Typography variant="h5" sx={{ textAlign: "left" }}>
+              <Typography variant="h5" sx={{ textAlign: "left" , fontWeight:'800'}}>
                 Progress
               </Typography>
               <img src={pro} />

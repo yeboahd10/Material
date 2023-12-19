@@ -6,17 +6,10 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import LogoutIcon from "@mui/icons-material/Logout";
-import pro from "../components/pro1.png";
-import {
-  Stack,
-  Card,
-  
-  Grid,
-  Paper,
-  CardHeader,
-  Container,
-} from "@mui/material";
+import pro from "../components/pro2.png";
+import { Stack, Paper, Container } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import AddchartIcon from "@mui/icons-material/Addchart";
 
 export default function ButtonAppBar() {
   return (
@@ -25,7 +18,7 @@ export default function ButtonAppBar() {
         <Toolbar>
           <IconButton
             size="large"
-            edge="start"
+            edge="end"
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
@@ -45,62 +38,54 @@ export default function ButtonAppBar() {
         </Toolbar>
       </AppBar>
       <Box>
-        <Stack direction="row" spacing={1} sx={{ p: 2 }}>
-          <AccountCircleIcon sx={{ color: "black", fontSize: "2rem" }} />
+        <Stack direction="row" spacing={14} sx={{ p: 2 }}>
           <Typography variant="h5" sx={{ fontWeight: "800" }}>
             DASHBOARD
           </Typography>
+          <IconButton edge="end" size="small">
+            <AccountCircleIcon sx={{ color: "black", fontSize: "2.5rem" }} />
+          </IconButton>
         </Stack>
-        <Box
-          width="250px"
-      
+      </Box>
+      <Container>
+        <Paper
+          elevation={5}
           sx={{
-            p: 2,
-            
-            
-            height: "370px",
-            minWidth: "290px",
-            margin: "2px",
-            
+            borderRadius: "20px",
+            padding: "10px",
+            backgroundColor: "#03a9f4",
+            height: "300px",
           }}
         >
-          <Stack direction="column" spacing={1}edge='start' textAlign='left'>
-            <Typography variant="h5"> ID:</Typography>
-            <Typography variant="h5"> Progress:</Typography>
-            <img src={pro} width='300px'/>
-          </Stack>
-         
-          <Stack direction="row">
-          
-          </Stack>
-          <Container sx={{ position: "absolute" }}>
-            <Grid container spacing={1}>
-              <Grid item xs={10}>
-                <Paper>
-                  <Card>
-                    <CardHeader
-                      title=" Profile"
-                      subheader=" complete profile"
-                    />
-                  </Card>
-                </Paper>
-              </Grid>
-              <Grid item xs={10}>
-                <Paper>
-                  <Card>
-                    <CardHeader
-                      title=" Score"
-                      subheader="Click to see your scores"
-                    />
-                  </Card>
-                </Paper>
-              </Grid>
-            </Grid>
-          </Container>
-        </Box>
+          <Box
+            sx={{
+              height: "250px",
+              borderRadius: "30px",
+              color: "white",
+            }}
+          >
+            <Stack spacing={0.7}>
+              <Typography variant="h5" sx={{ textAlign: "left" }}>
+                HI,
+              </Typography>
+              <Typography variant="h5" sx={{ textAlign: "left" }}>
+                Your Score
+              </Typography>
+              <Stack direction="row" spacing={16}>
+                <Typography variant="h1" sx={{ textAlign: "left" }}>
+                  0
+                </Typography>
 
-      
-      </Box>
+                <AddchartIcon sx={{fontSize:'5rem'}}></AddchartIcon>
+              </Stack>
+              <Typography variant="h5" sx={{ textAlign: "left" }}>
+                Progress
+              </Typography>
+              <img src={pro} />
+            </Stack>
+          </Box>
+        </Paper>
+      </Container>
     </Box>
   );
 }

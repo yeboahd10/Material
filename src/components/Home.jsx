@@ -10,7 +10,7 @@ import pro from "../components/pro1.png";
 import {
   Stack,
   Card,
-  CardContent,
+  
   Grid,
   Paper,
   CardHeader,

@@ -1,4 +1,4 @@
-import {Box,TextField,InputAdornment,Stack,Typography,Button} from '@mui/material'
+import {Box,TextField,InputAdornment,Stack,Typography,Button,Alert} from '@mui/material'
 import KeyIcon from "@mui/icons-material/Key";
 import EmailIcon from "@mui/icons-material/Email";
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -13,9 +13,11 @@ import { useNavigate } from 'react-router-dom'
 
 
 export const Login = () => {
+
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(null); 
   const onLogin = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(database, email, password)
@@ -29,6 +31,9 @@ export const Login = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage)
+        setError(errorMessage)
+       
+       
     });
    
 }
@@ -43,7 +48,9 @@ export const Login = () => {
               <img src={LOGO} width="120px" alt="" />
             </Stack>
         <Stack direction='column' spacing={2}>
+          
         <Typography variant="h5" sx={{color: 'black', fontWeight: '900'}}>SIGN IN</Typography>
+        {error && <Alert severity='error'>Email and Password Mismatch</Alert>}
  <TextField
             label="EMAIL"
             type="email"

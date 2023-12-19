@@ -5,6 +5,7 @@ import {
   InputAdornment,
   Button,
   Box,
+  Alert
 } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import KeyIcon from "@mui/icons-material/Key";
@@ -20,6 +21,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 export const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState('')
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -35,7 +37,7 @@ export const Register = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
-        alert("Email already registered Login");
+        setError(errorMessage)
         
       });
   };
@@ -67,6 +69,7 @@ export const Register = () => {
             <Typography variant="h4" fontWeight="900">
               SIGN UP
             </Typography>
+            {error && <Alert severity="error">Email Already Registered. Login</Alert>}
             <form>
               <Stack direction="column" spacing={2}>
                 <TextField
@@ -96,6 +99,7 @@ export const Register = () => {
                   label="EMAIL"
                   name="email"
                   type="email"
+                  required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   InputLabelProps={{ style: { color: "black" } }}
@@ -110,6 +114,7 @@ export const Register = () => {
                 <TextField
                   label="PASSWORD"
                   name="password"
+                  required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   InputLabelProps={{ style: { color: "black" } }}
